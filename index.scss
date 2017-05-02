@@ -1,0 +1,198 @@
+$secondary-color: #125688;
+$platzigram-red: #f44336;
+
+@import "node_modules/materialize-css/sass/materialize.scss";
+@import "./loader";
+
+@mixin prefix($property, $value, $vendors: webkit moz ms o) {
+  @if $vendors {
+    @each $vendor in $vendors {
+      #{"-" + $vendor + "-" + $property}: #{$value};
+    }
+  }
+  #{$property}: #{$value};
+}
+
+body{/*Body hace referencia al cuerpo del website*/
+  background: #fafafa;/*Se selecciona el color del fondo #fafafa es el equivalente a un gris claro*/
+  color: #125688;/*Este es el color de la tipografia, es un azul oscuro*/
+  font-family: Montserrat/*Este es el tipo de tipografia, se debe agregar en el archivo HTML en la seccion de head*/
+}
+//#main-container {/*Se seleccionan las partes del main-container*/
+//  margin: 30px auto;/*Se le da una margen de un tamaño de 30px*/
+//}
+.landing {
+  margin: 30px auto;
+}
+.iphone{/*se selecciona la imagen del iphone*/
+  max-width: 100%;/*Se le da un tamaño para que se adapte a la pantalla y no sea demasiado grande*/
+}
+.site-footer{/*Se selecciona el pie de pagina*/
+  text-transform: uppercase;/*Se colocan todas las letras en mayuscula*/
+  font-size: 12px;/*Se le da un tamañaño de letra de 12 pixeles*/
+}
+.login-box,
+.singup-box{/*Se seleccionan los recuadros del login y el del formulario de registro */
+  background-color: white;/*Se selecciona el color del fondo de cada uno, en este caso blanco*/
+  border: 1px solid #edeeee;/*Se le da un borde del tamaño de un pixel solido de color gris*/
+  border-radius: 3px;/*El borde se redondea en las esquinas*/
+  padding: 10px 0;/*Se le da un pequeño relleno para que el texto no quede pegado al borde*/
+  text-align: center;/*se centra el texto en el recuadro generado*/
+}
+.dropdown-button.btn.btn-flat{
+  color: $secondary-color;
+}
+.platzigram {/*Se seleccionan la parte del formulario de inscripcion y el titulo "platzigram"*/
+  font-family: 'Oleo Script';/*se selecciona la fuente de la letra de estos*/
+  font-size: 42px;/*se le da un tamaño de 42 pixeles a la letra*/
+  color: $secondary-color !important;
+}
+.singup-form{/*Se selecciona el recuadro del formulario*/
+  width: 65%;/*se le da un tamaño a cada seccion equivalente al  65% del recuadro*/
+  margin: 0 auto;/*se centra el recuadro*/
+}
+.singup-form h2{/*Se selecciona el recuadro del formulario*/
+  color: #a5a7aa;/*Se le da el color al texto mediante el cual se promociona el website, en este caso gris*/
+  font-size: 1.2em;/*se le da el tamaño a la letra del texto de promocion */
+}
+.singup-form .btn.btn-fb {/*se selecciona el boton para iniciar sesion con facebook*/
+  background-color: #4090db/*Se le da un color de fondo al boton, en este caso azul*/;
+  font-size: .8em;/*Se le da un tamaño al boton*/
+}
+.singup-form .btn.btn-fb:hover{/*Se selecciona el boton para iniciar sesion con facebook disponible unicamente en dispositivos moviles*/
+  background-color: #2d6599;/*Se le da un colo a este boton*/
+}
+.singup-form .btn.btn-singup{/*Se selecciona el boton de registro*/
+  background-color: $secondary-color !important;/*Se le da un color, en este caso azul oscuro*/
+}
+.header {
+  background-color: white;
+  color: $secondary-color;
+  box-shadow: none;
+  border-bottom: 1px solid #edeeee;
+}
+.timeline {
+  padding: 30px 0;
+}
+$avatar-size: 48px;
+
+.avatar {
+  max-width: $avatar-size;
+  height: $avatar-size;
+  border-radius: 50%;
+  float: left;
+  margin-right: 12px;
+}
+.card .username{
+  color: $secondary-color;
+}
+.card small.time {
+  line-height: $avatar-size;
+}
+.card p{
+  padding: 20px 0;
+}
+.card .likes{
+  line-height: 30px;
+  margin-left: 12px;
+}
+.card i{
+  font-size: 30px;
+}
+.card .fa-heart-o{
+  color: $secondary-color;
+}
+.card .fa-heart {
+  color: #f44336;
+  display: none;
+}
+.card.liked {
+.fa-heart{
+  display: block;
+  }
+  .fa-heart-o{
+    display: none;
+  }
+}
+.form-upload{
+  span, button{
+    color: white;
+  }
+  .fileUpload{
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+
+    input{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+  }
+}
+.user-page {
+  margin-top: 30px;
+
+  .heading {
+    margin-bottom: 20px;
+  }
+
+  .picture-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    margin-bottom: 20px;
+    position: relative;
+
+    &:hover {
+      .picture {
+        @include prefix(filter, blur(5px) grayscale(100%));
+      }
+
+      .likes {
+        display: flex;
+      }
+    }
+
+    .picture {
+      margin-bottom: 20px;
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .likes {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      color: $platzigram-red;
+      font-size: 34px;
+      display: none
+    }
+
+    .fa-heart {
+      margin-right: 8px;
+      display: inline-block;
+    }
+  }
+}
+
+.modal{
+  .fa-heart{
+    display: inline-block;
+  }
+}

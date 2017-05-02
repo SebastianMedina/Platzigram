@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" /><!--Sirve para que todos los caracteres del idioma español/ingles se puden ver sin problema -->
+    <title>Platzigram</title><!--Titulo de la pestaña -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Oleo+Script" rel="stylesheet" type="text/css"><!--Se llaman las fuentes (tipo de letra) desde google fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"><!--Se llaman los estilos de CSS disponibles en Materialize -->
+    <link rel="stylesheet" type="text/css" href="public/app.css"><!--Llamar al archivo .css encargado de dar el estilo al sitio web -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/><!-- device-width = para que el contenido ocupe todo el ancho del MD ; initial-scale = 1.0 (para que el zoom este al 100%); user-scalable=no (para que el usuario no pueda hacer zoom) -->
+    <link rel="apple-touch-icon" sizes="57x57" href="public/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="public/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="public/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="public/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="public/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="public/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="public/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="public/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="public/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="public/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="public/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+    <link rel="manifest" href="public/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <section id="main-container"><!--El contenedor permite centrar el contenido del sitio y dividirlo en un numero de secciones deseado -->
+      <div class="container"><!--Para segmentar el contenido del sitio se utilizan los tags "div class="container"" -->
+        <div class="row"><!--Con la clase "row" se generan las filas -->
+          <div class="col s10 push-s1"><!--La calse "col" se utiliza para generar columnas; s=tamaño de la columna (s=small;m=medium;l=large); push-s1 corre el contenido hacia la derecha; Esta es la columna central-->
+            <div class="row"><!--Con este div row se va a dividir la columna central en dos-->
+              <div class="col m5 hide-on-small-only"><!--Primera columna en donde se va situar la imagen representativa del website; m5 quiere decir que hay 5 columnas destinadas a portar la imagen-->
+                <img class="iphone" src="public/iphone.png" /><!--Se llama la imagen representativa del website situada en una carpeta del pc-->
+              </div><!--Se cierra el div de la primera columna-->
+              <div class="col s12 m7"><!--Se genera la segunda columna en donde irá situado el formulario de inscripcion al website; m7 quiere decir que ocupara las 7 columnas restantes con el formulario-->
+                <div class="row"><!--Con este "row" se divide la columna en la cantidad de filas necesarias para realizar el formulario de inscripcion-->
+                  <div class="singup-box"><!--Class singup-box se utiliza para generar una caja para guardar formularios de registro-->
+                    <h1 class="platzigram">Platzigram</h1><!--Aca se situa el titulo del website en la ventana del navegador-->
+                    <form class="singup-form"><!--Class singup-form sirve para generar el formulario -->
+                      <h2>Registrate para ver fotos de tus amigos estudiando en Platzi</h2><!--Este es un subtitulo en donde habra una frase promocionando el website-->
+                      <div class="section"><!--Sirve para dividir la columna es secciones-->
+                        <a class="btn btn-fb hide-on-small-only">Iniciar sesion con Facebook</a><!--Class btn, sirve para generar un boton, btn-fb hace referencia a boton de facebook, hiden-on-small-only quiere decir que este boton se ocultara para dispositivos pequeños -->
+                        <a class="btn btn-fb hide-on-med-and-up">Iniciar sesion</a><!--Aca se crea un boton para registrarse con facebook, el cual se ocultara para dispositivos medianos y grandes (hiden-on-med-and-up) -->
+                      </div>
+                      <div class="divider"></div><!--Class divider, genera lineas de division entre secciones-->
+                      <div class="section"><!--Aca se crea otra seccion en donde se digitaran los datos necesarios para inscribirse en el website-->
+                      <input type="email" name="email" placeholder="Correo electronico"></input><!--Se genera un campo para que el usuario digite su email-->
+                      <input type="text" name="name" placeholder="Nombre completo"></input><!--Se genera un campo para que el usuario digite su nombre-->
+                      <input type="text" name="username" placeholder="ID Usuario"></input><!--Se gnerea un campo para que el usuario digite su nickname-->
+                      <input type="password" name="password" placeholder="Contraseña"></input><!--Se genera un campo para que el usuario cree su contraseña-->
+                      <button class="btn waves-effect waves-light btn-singup" type="submit">Registrate</button><!--Se genera un boton cuya funcion es la de terminar el registro del usuario, waves-effect es un efecto visual que se genera al oprimir el boton-->
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="row"><!--En la parte inferior de la columna se genera el login para los usuarios existentes-->
+                  <div class="login-box"><!--Class login-box sirve para generar un hiperbinculo con el cual un usuario accedera a su cuenta existente-->
+                    ¿Tienes una cuenta? <a href="/singin">Entrar</a><!--"a" sirve para generar un enlace a singin implementado en la palabra "Entrar"-->
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="site-footer"><!--Footer con su clase site-footer sirve para editar el pie de pagina del website-->
+    <div class="container"><!--Se usa este contendor para generar un boton mediante el cual se pueda seleccionar el idioma del website-->
+      <div class="row"><!--Se genera un pequeño cuadro en una fila en donde estara el menu desplegable para seleccionar el idioma-->
+        <div class="col s12 l3 center-aling"><!--Se selecciona el tamaño y la posicion del pequeño recuadro-->
+          <a class='dropdown-button btn btn-flat' href='#' data-activates='dropdown1'>Idioma</a><!--Class dropdown-button genera un pequeño menu desplegable en forma de boton, en el cual se selecciona el idioma-->
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><a href="#!">Español</a></li><!--Se generan la opcion del idioma español-->
+              <li><a href="#!">Ingles</a></li><!--Se genera la opcion del idioma ingles-->
+            </ul>
+        </div>
+        <div class="col s12 l3 push-l6 center-aling"><!--Se genera un pequeño cuadro de texto en donde ira la marca registrada del website -->
+          © 2017 platzigram
+        </div>
+      </div>
+    </div></footer>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script><!--Se agrega jquery para que algunos caracteres especiales sean aceptados-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js">
+     </script><!--Con este link se llaman los estilos JS disponibles en Materialize -->
+  </body>
+</html>
